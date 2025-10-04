@@ -94,6 +94,8 @@ if st.button("🔮 Predict Math Score"):
         transformed = preprocessor.transform(input_data)
         prediction = model.predict(transformed)
         score = round(prediction[0])
+        score = max(0, min(100, score))
+
 
         st.markdown(
             f"""
